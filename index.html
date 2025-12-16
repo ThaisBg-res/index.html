@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FORMATION ULTIME — De BRONZE à Légende 5 </title>
+    <meta name="description" content="Landing page façon 'vendeur de rêve tah les arnaqueurs warframe prime'." />
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #07070b;
+            color: #e9e9f4;
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 16, .7);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+            z-index: 10;
+        }
+
+        .topbar .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            letter-spacing: .6px;
+        }
+
+        .pill {
+            font-size: 12px;
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 999px;
+            opacity: .9;
+        }
+
+        .btn {
+            appearance: none;
+            border: 0;
+            border-radius: 14px;
+            padding: 12px 16px;
+            cursor: pointer;
+            color: #0b0b10;
+            background: linear-gradient(135deg, #ffdf3a, #ff7a18);
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(255, 140, 0, .25);
+            transition: transform .06s ease;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: #e9e9f4;
+            border: 1px solid rgba(255, 255, 255, .18);
+            box-shadow: none;
+        }
+
+        header.hero {
+            padding: 46px 0 26px;
+            background: radial-gradient(1000px 450px at 20% 10%, rgba(255, 200, 30, .18), transparent 60%),
+                radial-gradient(900px 420px at 85% 0%, rgba(160, 80, 255, .18), transparent 55%);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 22px;
+            align-items: start;
+        }
+
+        @media (max-width: 860px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h1 {
+            font-size: clamp(34px, 4.6vw, 58px);
+            line-height: 1.02;
+            margin: 0 0 14px;
+        }
+
+        .sub {
+            font-size: 16px;
+            opacity: .92;
+            line-height: 1.6;
+            max-width: 62ch;
+        }
+
+        .badgeRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 18px 0 10px;
+        }
+
+        .badge {
+            font-size: 12px;
+            padding: 8px 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .10);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .10);
+            border-radius: 18px;
+            padding: 18px;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
+
+        .kpis {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .kpi {
+            padding: 12px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .kpi .big {
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .kpi .small {
+            font-size: 12px;
+            opacity: .85;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .timeBox {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 14px;
+            background: rgba(0, 0, 0, .25);
+            border: 1px solid rgba(255, 255, 255, .10);
+        }
+
+        .timeBox b {
+            display: block;
+            font-size: 20px;
+        }
+
+        .timeBox span {
+            font-size: 11px;
+            opacity: .85;
+            letter-spacing: .5px;
+        }
+
+        section {
+            padding: 18px 0;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin: 0 0 12px;
+        }
+
+        ul {
+            margin: 10px 0 0 18px;
+            line-height: 1.7;
+        }
+
+        .quote {
+            font-style: italic;
+            opacity: .92;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        @media (max-width: 860px) {
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fineprint {
+            font-size: 12px;
+            opacity: .7;
+            line-height: 1.5;
+            margin-top: 12px;
+        }
+
+        .footer {
+            padding: 30px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            opacity: .9;
+        }
+
+        a {
+            color: #ffd56a;
+        }
+
+        .toast {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 20;
+            background: rgba(0, 0, 0, .75);
+            border: 1px solid rgba(255, 255, 255, .12);
+            padding: 12px 14px;
+            border-radius: 14px;
+            width: min(360px, calc(100% - 32px));
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="wrap">
+            <div class="brand">
+                <span style="font-size:18px;">💎</span>
+                <span>FRAME.ACADEMY</span>
+                <span class="pill">édition “0 → 10pl/mois”</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+                <button class="btn secondary" id="btnProof">Voir “preuves”</button>
+                <button class="btn" id="btnCTA">ACCÈS VIP</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="wrap grid">
+            <div>
+                <div class="badgeRow">
+                    <div class="badge">✅ “Méthode secrète”</div>
+                    <div class="badge">⏳ Places *illimitées* mais “limitées”</div>
+                    <div class="badge">🧠 Mindset + 2 PDF magiques + le num de Steph à 4 pas de chez toi !</div>
+                </div>
+
+                <h1>De BRONZE à <span
+                        style="background: linear-gradient(135deg,#ffdf3a,#a06bff); -webkit-background-clip:text; background-clip:text; color:transparent;">Légende
+                        5</span> en 7 jours.</h1>
+                <p class="sub">
+                    Tu veux “changer de vie”, “reprendre le contrôle”, et “créer une liberté financière” en 2 clics ?
+                    Bienvenue sur cette <b>formation</b> pour farm toujours + au delà des limites Plus Ultra!!! 🚀
+                <p class="fineprint"> (ptit ref à One pièce) </p>
+
+
+                <a
+                    href="mailto:boudetthais@gmail.com?subject=Je prends ma place&body=Bonjour,%0A%0AJe veux prendre ma place pour devenir une légende.%0A%0ACordialement,%0AUn futur Tenno">
+                    <button class="btn" id="btnMain">
+                        JE PRENDS MA PLACE
+                    </button>
+                </a>
+                <a
+                    href="mailto:boudetthais@gmail.com?subject=Version gratuite&body=Bonjour,%0A%0AJe veux la version gratuite.%0A%0AMerci.%0A">
+                    <button class="btn secondary" id="btnFree">
+                        Je veux “la version gratuite”
+                    </button>
+                </a>
+                <p class="fineprint">
+                    ⚠️Aucune formation n’est réellement vendue, aucun paiement n’est traité,
+                    aucune donnée n’est collectée. Uniquement ton âme sera échangé.</p>
+            </div>
+
+            <aside class="card">
+                <h3>🔥 Offre “Flash” qui revient tous les jours</h3>
+                <div class="quote">“Je ferme à minuit… enfin… je verrai, je dois passer au Bois de Boulogne...(juste
+                    pour me balader hein)”</div>
+
+                <div class="countdown" aria-label="Compte à rebours">
+                    <div class="timeBox"><b id="d">00</b><span>JOURS</span></div>
+                    <div class="timeBox"><b id="h">00</b><span>HEURES</span></div>
+                    <div class="timeBox"><b id="m">00</b><span>MIN</span></div>
+                    <div class="timeBox"><b id="s">00</b><span>SEC</span></div>
+                </div>
+
+                <div class="kpis">
+                    <div class="kpi">
+                        <div class="big" id="sold">1 337</div>
+                        <div class="small">“Ventes” aujourd’hui</div>
+                    </div>
+                    <div class="kpi">
+                        <div class="big">97%</div>
+                        <div class="small">de “satisfaction” (source : moi)</div>
+                    </div>
+                </div>
+
+                <a href="https://discord.gg/39njJqcs" target="_blank" style="text-decoration:none;">
+                    <div class="btn" style="display:inline-flex; align-items:center; gap:8px;">
+                        💬 Rejoindre le Discord privé
+                    </div>
+                </a>
+
+                <p class="fineprint">
+                    *Bonus:* accès au “Discord privé” (faites des dons svp pour nourrir le bébé) + “coaching 1:1” (en
+                    date et tout bref envoie ton 07).
+                </p>
+            </aside>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="card">
+            <h2>Ce que tu vas “apprendre”</h2>
+            <ul>
+                <li>Où farm avec 4 boosters actifs ???</li>
+                <li>Les meilleurs endroits pour obtenir les reliques rechercher.</li>
+                <li>Comment survivre à 4h de survie en Steel Path</li>
+                <li>Comment faire crash vos potes avec un build warframe ! </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Témoignages 100% “vérifiés”</h2>
+            <div class="testimonials">
+                <div class="card">
+                    <b>Sylvain R.</b>
+                    <p class="quote">“En 24h j’ai compris que le vrai secret c’était le farm intensif, un bain ? une
+                        douche ? Plus jamais !”</p>
+                    <small>⭐️⭐️⭐️⭐️⭐️</small>
+                </div>
+                <div class="card">
+                    <b>Yory C.</b>
+                    <p class="quote">“Je suis passée de 0pl à 0pl mais je repars avec un meilleur mindset.”</p>
+                    <small>⭐️⭐️⭐️⭐️⭐️</small>
+                </div>
+                <div class="card">
+                    <b>Wendy G.</b>
+                    <p class="quote">“J’ai cliqué. Ça a changé ma vie plus besoin de réfléchir.”</p>
+                    <small>⭐️⭐️⭐️⭐️⭐️</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>FAQ</h2>
+            <p><b>Est-ce vrai ?</b><br />Non. Comme le drop à 2 de mod %</p>
+            <p><b>Je peux vraiment arrvier jusqu'au rang légendaire 5 en 1 mois </b><br />Oui. Mentalement.</p>
+            <p><b>C’est lié à Warframe ?</b><br />Non officiellement. La RNG seulement.</p>
+            <p><b>Je peux partager le site ?</b><br> Nah, je vais le out dans 2h</p>
+        </section>
+
+        <div class="footer">
+            <div class="fineprint">
+                © <span id="year"></span> FRAME.ACADEMY. Aucun paiement, aucune collecte de données. Uniquement une
+                partie de votre longévité.
+                <br />
+            </div>
+        </div>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        // --- Helpers
+        const $ = (id) => document.getElementById(id);
+        const toast = (msg) => {
+            const t = $("toast");
+            t.textContent = msg;
+            t.style.display = "block";
+            clearTimeout(window.__toastT);
+            window.__toastT = setTimeout(() => (t.style.display = "none"), 2600);
+        };
+
+        // --- Fake countdown that resets daily at 23:59:59
+        function updateCountdown() {
+            const now = new Date();
+            const end = new Date();
+            end.setHours(23, 59, 59, 999);
+            const diff = Math.max(0, end - now);
+
+            const s = Math.floor(diff / 1000);
+            const days = Math.floor(s / 86400);
+            const hrs = Math.floor((s % 86400) / 3600);
+            const mins = Math.floor((s % 3600) / 60);
+            const secs = s % 60;
+
+            $("d").textContent = String(days).padStart(2, "0");
+            $("h").textContent = String(hrs).padStart(2, "0");
+            $("m").textContent = String(mins).padStart(2, "0");
+            $("s").textContent = String(secs).padStart(2, "0");
+        }
+        setInterval(updateCountdown, 250);
+        updateCountdown();
+
+        // --- Fake sales counter
+        let sold = 1337;
+        function bumpSold() {
+            sold += Math.random() < 0.65 ? 1 : 0;
+            $("sold").textContent = sold.toLocaleString("fr-FR");
+        }
+        setInterval(bumpSold, 900);
+
+        // --- Buttons actions (no payments)
+        function cta() {
+            toast("🚫 aucun achat ici. Mais ton mindset est déjà au top.");
+            document.querySelector("header.hero").scrollIntoView({ behavior: "smooth" });
+        }
+
+        $("btnCTA").onclick = cta;
+        $("btnMain").onclick = () => toast("✅ Place réservée (dans ton imagination).");
+        $("btnBuy").onclick = () => toast("💳 Paiement annulé : ce site est une blague (heureusement).");
+        $("btnLater").onclick = () => toast("🧠 Réfléchir c’est déjà être riche (selon certains).");
+        $("btnFree").onclick = () => toast("🎁 Le gratuit : respire, bois de l’eau, et fais un vrai projet.");
+        $("btnProof").onclick = () => toast("📈 Preuves : *captures d’écran floues*.");
+
+        $("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
